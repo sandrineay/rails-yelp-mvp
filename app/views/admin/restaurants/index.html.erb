@@ -1,0 +1,13 @@
+<h1>Yelp London</h1>
+
+<h2>My restaurants</h2>
+
+<%= link_to "Add a new restaurant", new_restaurant_path %>
+
+<% @restaurants.each do |restaurant| %>
+  <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+  <p><%= restaurant.address %></p>
+  <p><%= restaurant.phone_number %></p>
+  <p><%= link_to "Edit this restaurant", edit_restaurant_path(restaurant) %></p>
+  <%= link_to "Delete this restaurant", restaurant_path(restaurant), method: :delete %>
+<% end %>
